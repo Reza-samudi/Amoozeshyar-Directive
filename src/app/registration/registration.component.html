@@ -1,0 +1,46 @@
+<div>
+    <mat-toolbar>
+        <span>ثبت نام</span>
+      </mat-toolbar>
+    </div>
+<div class="full"> 
+  <mat-card class="my-card">
+     <mat-card-content>
+        <mat-card-content>
+            <form class="my-form p">
+               <mat-form-field class="full-width">
+
+                      <mat-label for>نام</mat-label>
+                      <input [(ngModel)]="registerRequest.firstname"  matInput type="text"  placeholder="نام"  name="fname" id="fname"  required>
+                   </mat-form-field>
+                   <mat-form-field class="full-width">
+                      <mat-label>نام خانوادگی</mat-label>
+                      <input [(ngModel)]="registerRequest.lastname"  matInput type="text"  placeholder="نام خانوادگی" name="lname" id="lname"  required>
+                   </mat-form-field>
+                   <mat-form-field class="full-width">
+                      <mat-label>پسورد</mat-label>
+                      <input [(ngModel)]="registerRequest.password" matInput type="text"  placeholder="پسورد" name="password" id="password"  required>
+                   </mat-form-field>
+                   <mat-form-field class="full-width">
+                      <mat-label>تکرار پسورد</mat-label>
+                      <input  [(ngModel)]="confirmPassword"  matInput type="text"  placeholder="تکرار پسورد" name="confirmPassword" id="confirmPassword">
+                   </mat-form-field>
+                   <mat-form-field class="full-width">
+                      <mat-label>شماره همراه</mat-label>
+                      <input [(ngModel)]="registerRequest.mobile" matInput type="text"  placeholder="شماره همراه"  name="mobile" id="mobile">
+                   </mat-form-field>
+            </form>
+          </mat-card-content>
+     </mat-card-content>
+     <div class="example-button-row">
+        <button [disabled]="!isValid()" mat-raised-button (click)="register()"  color="primary">تایید</button>
+        &nbsp;
+        <button mat-raised-button  color="primary" [routerLink]="['/login']">بازگشت</button>
+     </div>
+     &nbsp;
+     <button mat-button color="primary" *ngIf="registerResponse && registerResponse.message!=''">
+        {{registerResponse.message}}
+
+     </button>
+  </mat-card>
+</div>

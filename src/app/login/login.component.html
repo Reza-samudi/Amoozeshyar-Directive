@@ -1,0 +1,45 @@
+<div>
+    <mat-toolbar>
+        <span>خوش آمدید</span>
+      </mat-toolbar>
+</div>
+ <div class="full">
+  <mat-card class="my-card">
+     <mat-card-content>
+        <form class="my-form">
+           <!-- <mat-form-field class="full-width">
+              <mat-label>شماره همراه</mat-label>
+              <input  matInput  placeholder="شماره همراه" name="number">
+           </mat-form-field> -->
+           <!-- <mat-form-field class="full-width">
+              <mat-label>کلمه ی عبور</mat-label>
+              <input  matInput  placeholder="کلمه عبور" name="password">
+           
+            </mat-form-field> -->
+            <h2 style="text-align: center;">Login</h2>
+            <div>
+               <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>شماره همراه</mat-label>
+                  <input [(ngModel)]="loginRequest.mobile" matInput type="text"  placeholder="شماره همراه"  name="mobile" id="mobile">
+               </mat-form-field>
+            </div>
+           <div>
+            <mat-form-field appearance="fill">
+              <mat-label>رمز عبور</mat-label>
+              <input [(ngModel)]="loginRequest.password" type="text" id="password" name="password" matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+         </div>
+        </form>
+
+     </mat-card-content>
+     <div class="example-button-row">
+        <button (click)="login()" style="  font-size: 20px;" mat-raised-button  color="primary">ورود</button>
+        &nbsp;
+        <button style="  font-size: 20px;"  mat-raised-button color="primary" [routerLink]="['/register']">ثبت نام</button>
+      </div>
+     
+  </mat-card>
+  </div>
