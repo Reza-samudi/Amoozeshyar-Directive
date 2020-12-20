@@ -1,22 +1,13 @@
-<div>
+<!-- <div>
     <mat-toolbar>
         <span>خوش آمدید</span>
       </mat-toolbar>
-</div>
- <div class="full">
-  <mat-card class="my-card">
+</div> -->
+<div class="row h-100 m-0">
+  <!-- <mat-card class="my-card">
      <mat-card-content>
-        <form class="my-form">
-           <!-- <mat-form-field class="full-width">
-              <mat-label>شماره همراه</mat-label>
-              <input  matInput  placeholder="شماره همراه" name="number">
-           </mat-form-field> -->
-           <!-- <mat-form-field class="full-width">
-              <mat-label>کلمه ی عبور</mat-label>
-              <input  matInput  placeholder="کلمه عبور" name="password">
-           
-            </mat-form-field> -->
-            <h2 style="text-align: center;">Login</h2>
+        <form class="my-form">  
+            
             <div>
                <mat-form-field appearance="fill" class="full-width">
                   <mat-label>شماره همراه</mat-label>
@@ -40,6 +31,39 @@
         &nbsp;
         <button style="  font-size: 20px;"  mat-raised-button color="primary" [routerLink]="['/register']">ثبت نام</button>
       </div>
+      &nbsp;
+      <button style="font-size: 18px;" mat-button color="warn" *ngIf="loginResponse && loginResponse.isAuthenticated==false"> 
+         {{loginResponse.message}}
+ 
+     </button>
      
-  </mat-card>
+  </mat-card> -->
+  <div class="col-md name center left">
+   <h1 class="display-1">Rulilo</h1>
+   <p>Register users, login</p>
+</div>
+<div class="col-md center order-first order-md-last right">
+   <img src="../../assets/image/login.svg" alt="Login" class="w-50 d-none d-md-block mb-5">
+   <form action="/login" method="POST" class="w-75">
+       <h2 class="mb-3">ورود به سامانه</h2>
+       <div class="form-group">
+           <input [(ngModel)]="loginRequest.mobile" type="text" class="form-control" aria-describedby="emailHelp" placeholder="شماره همراه" name="mobile" required>
+       </div>
+       <div class="form-group">
+           <input [(ngModel)]="loginRequest.password" type="password" class="form-control" placeholder="پسورد" name="password" required>
+       </div>
+       &nbsp;
+       <div class="d-flex">
+         <button style="  font-size: 20px;"  mat-raised-button color="primary" [routerLink]="['/register']">ثبت نام</button>
+         &nbsp;
+         <button (click)="login()" style="  font-size: 20px;" mat-raised-button  color="primary">ورود</button>
+       </div>
+       &nbsp;
+       <button style="font-size: 18px;" mat-button color="warn" *ngIf="loginResponse && loginResponse.isAuthenticated==false"> 
+         {{loginResponse.message}}
+ 
+     </button>
+   </form>
+</div>
+
   </div>
