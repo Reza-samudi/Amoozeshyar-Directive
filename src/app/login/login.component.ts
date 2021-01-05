@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     this.loginRequest = new LoginRequest;
   }
 
+
   async login(){
     this.loginResponse= await this.backend.LoginRequest(this.loginRequest) as LoginResponse;
     if(this.loginResponse.isAuthenticated==true){
@@ -29,7 +30,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/users/interns']);
     }
     else if(this.loginResponse.role=='Professor'){
-      this.router.navigate(['/users/professor']);
+      this.router.navigate(['/users/professors']);
+    }
+     if(this.loginResponse.role=='Manager'){
+      this.router.navigate(['/users/managers'])
     }
   }
 }

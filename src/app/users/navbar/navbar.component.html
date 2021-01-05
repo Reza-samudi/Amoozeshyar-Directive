@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport style="background-color: #fcfcfcee;"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="font-size: x-large; font-weight: bold;" >داشبورد</mat-toolbar>
+    <mat-nav-list style="font-size: large; font-weight: bold;color: rgba(0,0,0,.65);">
+      <a mat-list-item [routerLink]="['interns']"> کارآموزان </a>
+      <a mat-list-item [routerLink]="['professors']">اساتید</a>
+      <a mat-list-item [routerLink]="['managers']"> مدیران</a>
+      <a mat-list-item > دروس</a>
+      <a mat-list-item > دروس من</a>
+      <a mat-list-item > دوره ها</a>
+      <a mat-list-item >  دوره های من</a>
+     
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="width: 100%;">
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>مجتمع آموزشی نوین دانشجو</span>
+      <mat-icon style=" cursor: pointer;" (click)='logOut()' aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

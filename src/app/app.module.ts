@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
