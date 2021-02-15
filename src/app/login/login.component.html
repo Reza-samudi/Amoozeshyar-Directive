@@ -1,4 +1,4 @@
-<!-- <div>
+~<!-- <div>
     <mat-toolbar>
         <span>خوش آمدید</span>
       </mat-toolbar>
@@ -54,9 +54,9 @@
        </div>
        &nbsp;
        <div class="d-flex">
-         <button style="  font-size: 20px;"  mat-raised-button color="primary" [routerLink]="['/register']">ثبت نام</button>
-         &nbsp;
-         <button (click)="login()" style="  font-size: 20px;" mat-raised-button  color="primary">ورود</button>
+          <button (click)="login()" style="  font-size: 20px;" mat-raised-button  color="primary">ورود</button>
+          &nbsp;
+          <button style="  font-size: 20px;"  mat-raised-button color="primary" [routerLink]="['/register']">ثبت نام</button>
        </div>
        &nbsp;
        <button style="font-size: 18px;" mat-button color="warn" *ngIf="loginResponse && loginResponse.isAuthenticated==false"> 
